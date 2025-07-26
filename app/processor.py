@@ -51,6 +51,10 @@ def sync_qwen_response(prompt: str) -> str:
         skip_special_tokens=True,
         strip_special_tokens=True,
     )
+
+    if "</think>" in response:
+        response = response.split("</think>")[-1].strip()
+
     print(f"prompt finished in {datetime.datetime.now() - start}")
     return extract_model_reply(response)
 
