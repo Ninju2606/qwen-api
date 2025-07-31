@@ -1,7 +1,6 @@
 fastapi
 uvicorn
 httpx
-pytest
 transformers
 accelerate
 torch
